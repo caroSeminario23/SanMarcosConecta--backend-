@@ -1,0 +1,28 @@
+# ENLACES DE ADMINISTRADOR (COMPLETO)
+POST http://127.0.0.1:5000/administrativo_routes/create_administrativo
+Content-Type: application/json
+
+{
+    "id_persona": 1,
+    "id_cargo": 2
+}
+#####
+
+GET http://127.0.0.1:5000/administrativo_routes/get_administrativos
+#####
+
+GET http://127.0.0.1:5000/administrativo_routes/get_administrativo/1
+#####
+
+PUT http://127.0.0.1:5000/administrativo_routes/update_administrativo/4
+Content-Type: application/json
+
+{
+    "id_persona": 3,
+    "id_cargo": 4,
+    "activo": "false"
+}
+#####
+
+DELETE http://127.0.0.1:5000/administrativo_routes/delete_administrativo/4
+#####
