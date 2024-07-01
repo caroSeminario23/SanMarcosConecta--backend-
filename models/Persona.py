@@ -7,14 +7,16 @@ class Persona(db.Model):
 
     id_persona = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
     id_usuario = db.Column(db.Integer, db.ForeignKey('usuario.id_usuario'), nullable=False)
-    nombres = db.Column(db.String(150), nullable=False)
+    cod_identificacion = db.Column(db.String(8), nullable=False, unique=True)
+    doc_identificacion = db.Column(db.String(9), nullable=False, unique=True)
+    nombres = db.Column(db.String(100), nullable=False)
     apellidos = db.Column(db.String(150), nullable=False)
     fec_nacimiento = db.Column(db.Date, nullable=False)
     n_celular = db.Column(db.String(12), nullable=False)
     genero = db.Column(db.Character(1), nullable=False) # M: Masculino, F: Femenino
 
     # relaciones
-    usuario = relationship('Usuario', back_populates='persona')
+    usuario = relationship('Usuario', back_populates='personas')
     administrativos = relationship('Administrativo', back_populates='persona', cascade='all, delete-orphan')
     docentes = relationship('Docente', back_populates='persona', cascade='all, delete-orphan')
     estudiantes = relationship('Estudiante', back_populates='persona', cascade='all, delete-orphan')
