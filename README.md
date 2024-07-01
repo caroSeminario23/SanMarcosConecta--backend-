@@ -1,0 +1,5 @@
+# SAN MARCOS CONECTA
+## BACKEND CON FLASK
+
+- Grupo 2
+- Curso HCI
