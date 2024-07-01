@@ -12,7 +12,7 @@ class Usuario(db.Model):
 
     # relaciones
     tipo_usuario = relationship('Tipo_usuario', backref='usuario1')
-    persona = relationship('Persona', back_populates='usuario', cascade='all, delete-orphan')
+    personas = relationship('Persona', back_populates='usuario', cascade='all, delete-orphan')
     
     # constructor de la clase
     def __init__(self, email, contrasenia, id_tipo_usuario):

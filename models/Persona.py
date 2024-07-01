@@ -16,7 +16,7 @@ class Persona(db.Model):
     genero = db.Column(db.Character(1), nullable=False) # M: Masculino, F: Femenino
 
     # relaciones
-    usuario = relationship('Usuario', back_populates='persona')
+    usuario = relationship('Usuario', back_populates='personas')
     administrativos = relationship('Administrativo', back_populates='persona', cascade='all, delete-orphan')
     docentes = relationship('Docente', back_populates='persona', cascade='all, delete-orphan')
     estudiantes = relationship('Estudiante', back_populates='persona', cascade='all, delete-orphan')
