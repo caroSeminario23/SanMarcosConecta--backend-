@@ -7,7 +7,6 @@ class Estudiante(db.Model):
 
     id_estudiante = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
     id_persona = db.Column(db.Integer, db.ForeignKey('persona.id_persona'), nullable=False, unique=True)
-    codigo = db.Column(db.Character(8), nullable=False, unique=True)
     n_ciclo = db.Column(db.Integer, nullable=False, default=0)
     egresado = db.Column(db.Boolean, nullable=False, default=False)
 

@@ -10,7 +10,7 @@ class Reserva(db.Model):
     id_persona = db.Column(db.Integer, db.ForeignKey('persona.id_persona'), nullable=False)
     id_dia = db.Column(db.Integer, db.ForeignKey('dia.id_dia'), nullable=False)
     hora_inicio = db.Column(db.Time, nullable=False)
-    hora_fin = db.Column(db.Time, nullable=False)
+    hora_fin = db.Column(db.Time, nullable=True)
 
     # relaciones
     aula = relationship('Aula', backref='reserva1')
