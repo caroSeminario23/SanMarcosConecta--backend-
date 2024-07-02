@@ -80,10 +80,11 @@ def update_administrativo(id_administrativo):
 
     id_persona = request.json('id_persona')
     id_cargo = request.json('id_cargo')
+    activo= request.json('activo')
 
     administrativo.id_persona = id_persona
     administrativo.id_cargo = id_cargo
-    administrativo.activo = request.json('activo')
+    administrativo.activo = activo
 
     db.session.commit()
 
