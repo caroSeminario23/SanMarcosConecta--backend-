@@ -7,8 +7,10 @@ asistencia_doc_routes = Blueprint("Asistencia_doc_routes", __name__)
 
 @asistencia_doc_routes.route('/create_asistencia_doc', methods=['POST'])
 def create_asistencia_doc():
-    id_seccion = request.json('id_seccion')
-    fecha_marcado = request.json('fecha_marcado')
+    data = request.get_json()
+    
+    id_seccion = data.get('id_seccion')
+    fecha_marcado = data.get('fecha_marcado')
 
     new_asistencia_doc = Asistencia_doc(id_seccion, fecha_marcado)
     
@@ -78,9 +80,11 @@ def update_asistencia_doc(id_asistencia_doc):
         }
         return make_response(jsonify(data), 404)
     
-    id_seccion = request.json('id_seccion')
-    fecha_marcado = request.json('fecha_marcado')
-    marcada = request.json('marcada')
+    data = request.get_json()
+    
+    id_seccion = data.get('id_seccion')
+    fecha_marcado = data.get('fecha_marcado')
+    marcada = data.get('marcada')
 
     asistencia_doc.id_seccion = id_seccion
     asistencia_doc.fecha_marcado = fecha_marcado

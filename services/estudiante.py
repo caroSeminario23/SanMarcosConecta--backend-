@@ -7,9 +7,12 @@ estudiante_routes = Blueprint("estudiante_routes", __name__)
 
 @estudiante_routes.route('/create_estudiante', methods=['POST'])
 def create_estudiante():
-    id_persona = request.json('id_persona')
-    n_ciclo = request.json('n_ciclo')
-    egresado = request.json('egresado')
+    
+    data = request.get_json()
+    
+    id_persona = data.get('id_persona')
+    n_ciclo = data.get('n_ciclo')
+    egresado = data.get('egresado')
 
     new_estudiante = Estudiante(id_persona, n_ciclo, egresado)
 
@@ -78,10 +81,13 @@ def update_estudiante(id_estudiante):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    
+    data = request.get_json()
 
-    estudiante.id_persona = request.json('id_persona')
-    estudiante.n_ciclo = request.json('n_ciclo')
-    estudiante.egresado = request.json('egresado')
+    estudiante.id_persona = data.get('id_persona')
+    estudiante.n_ciclo = data.get('n_ciclo')
+    estudiante.egresado = data.get('egresado')
 
     db.session.commit()
 

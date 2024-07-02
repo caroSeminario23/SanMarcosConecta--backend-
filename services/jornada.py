@@ -7,10 +7,13 @@ jornada_routes = Blueprint("jornada_routes", __name__)
 
 @jornada_routes.route('/create_jornada', methods=['POST'])
 def create_jornada():
-    id_administrativo = request.json('id_administrativo')
-    id_dia = request.json('id_dia')
-    hora_inicio = request.json('hora_inicio')
-    hora_fin = request.json('hora_fin')
+    
+    data = request.get_json()
+    
+    id_administrativo = data.get('id_administrativo')
+    id_dia = data.get('id_dia')
+    hora_inicio = data.get('hora_inicio')
+    hora_fin = data.get('hora_fin')
 
     new_jornada = Jornada(id_administrativo, id_dia, hora_inicio, hora_fin)
 
@@ -79,11 +82,14 @@ def update_jornada(id_jornada):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    
+    data = request.get_json()
         
-    jornada.id_administrativo = request.json('id_administrativo')
-    jornada.id_dia = request.json('id_dia')
-    jornada.hora_inicio = request.json('hora_inicio')
-    jornada.hora_fin = request.json('hora_fin')
+    jornada.id_administrativo = data.get('id_administrativo')
+    jornada.id_dia = data.get('id_dia')
+    jornada.hora_inicio = data.get('hora_inicio')
+    jornada.hora_fin = data.get('hora_fin')
 
     db.session.commit()
 

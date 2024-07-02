@@ -7,12 +7,15 @@ seccion_routes = Blueprint("seccion_routes", __name__)
 
 @seccion_routes.route('/create_seccion', methods=['POST'])
 def create_seccion():
-    id_curso = request.json('id_curso')
-    id_aula = request.json('id_aula')
-    id_docente = request.json('id_docente')
-    id_dia = request.json('id_dia')
-    hora_inicio = request.json('hora_inicio')
-    hora_fin = request.json('hora_fin')
+    
+    data = request.get_json()
+    
+    id_curso = data.get('id_curso')
+    id_aula = data.get('id_aula')
+    id_docente = data.get('id_docente')
+    id_dia = data.get('id_dia')
+    hora_inicio = data.get('hora_inicio')
+    hora_fin = data.get('hora_fin')
 
     new_seccion = Seccion(id_curso, id_aula, id_docente, id_dia, hora_inicio, hora_fin)
 
@@ -81,13 +84,15 @@ def update_seccion(id_seccion):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    data = request.get_json()
 
-    seccion.id_curso = request.json('id_curso')
-    seccion.id_aula = request.json('id_aula')
-    seccion.id_docente = request.json('id_docente')
-    seccion.id_dia = request.json('id_dia')
-    seccion.hora_inicio = request.json('hora_inicio')
-    seccion.hora_fin = request.json('hora_fin')
+    seccion.id_curso = data.get('id_curso')
+    seccion.id_aula = data.get('id_aula')
+    seccion.id_docente = data.get('id_docente')
+    seccion.id_dia = data.get('id_dia')
+    seccion.hora_inicio = data.get('hora_inicio')
+    seccion.hora_fin = data.get('hora_fin')
 
     db.session.commit()
 

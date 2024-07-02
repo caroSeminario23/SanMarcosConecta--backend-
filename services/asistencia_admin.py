@@ -7,8 +7,9 @@ asistencia_admin_routes = Blueprint("asistencia_admin_routes", __name__)
 
 @asistencia_admin_routes.route('/create_asistencia_admin', methods=['POST'])
 def create_asistencia_admin():
-    id_jornada = request.json('id_jornada')
-    fecha_marcado = request.json('fecha_marcado')
+    data = request.get_json()
+    id_jornada = data.get('id_jornada')
+    fecha_marcado = data.get('fecha_marcado')
 
     new_asistencia_admin = Asistencia_admin(id_jornada, fecha_marcado)
     
@@ -78,9 +79,11 @@ def update_asistencia_admin(id_asistencia_admin):
         }
         return make_response(jsonify(data), 404)
     
-    id_jornada = request.json('id_jornada')
-    fecha_marcado = request.json('fecha_marcado')
-    marcada = request.json('marcada')
+    data = request.get_json()
+    
+    id_jornada = data.get('id_jornada')
+    fecha_marcado = data.get('fecha_marcado')
+    marcada = data.get('marcada')
     
     asistencia_admin.id_jornada = id_jornada
     asistencia_admin.fecha_marcado = fecha_marcado

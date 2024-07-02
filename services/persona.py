@@ -7,16 +7,19 @@ persona_routes = Blueprint("persona_routes", __name__)
 
 @persona_routes.route('/create_persona', methods=['POST'])
 def create_persona():
-    id_usuario = request.json('id_usuario')
-    cod_identificacion = request.json('cod_identificacion')
-    doc_identificacion = request.json('doc_identificacion')
-    nombres = request.json('nombres')
-    apellidos = request.json('apellido')
-    fec_nacimiento = request.json('fec_nacimiento')
-    n_celular = request.json('n_celular')
-    genero = request.json('genero')
+    
+    data = request.get_json()
+    
+    id_usuario = data.get('id_usuario')
+    cod_identificacion = data.get('cod_identificacion')
+    doc_identificacion = data.get('doc_identificacion')
+    nombres = data.get('nombres')
+    apellidos = data.get('apellidos')
+    fec_nacimiento = data.get('fec_nacimiento')
+    n_celular = data.get('n_celular')
+    genero = data.get('genero')
 
-    new_persona = Persona(id_usuario, cod_identificacion, doc_identificacion, nombres, apellidos, fec_nacimiento, n_celular, genero)
+    new_persona = Persona(id_usuario, nombres, cod_identificacion, doc_identificacion, apellidos, fec_nacimiento, n_celular, genero)
 
     db.session.add(new_persona)
     db.session.commit()
@@ -83,15 +86,17 @@ def update_persona(id_persona):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    data = request.get_json()
 
-    persona.id_usuario = request.json('id_usuario')
-    persona.cod_identificacion = request.json('cod_identificacion')
-    persona.doc_identificacion = request.json('doc_identificacion')
-    persona.nombres = request.json('nombres')
-    persona.apellidos = request.json('apellido')
-    persona.fec_nacimiento = request.json('fec_nacimiento')
-    persona.n_celular = request.json('n_celular')
-    persona.genero = request.json('genero')
+    persona.id_usuario = data.get('id_usuario')
+    persona.cod_identificacion = data.get('cod_identificacion')
+    persona.doc_identificacion = data.get('doc_identificacion')
+    persona.nombres = data.get('nombres')
+    persona.apellidos = data.get('apellido')
+    persona.fec_nacimiento = data.get('fec_nacimiento')
+    persona.n_celular = data.get('n_celular')
+    persona.genero = data.get('genero')
 
     db.session.commit()
 

@@ -1,7 +1,7 @@
 from utils.ma import ma
-from models.asistencia_admin import Asistencia_admin
+from models.Asistencia_admin import Asistencia_admin
 from marshmallow import fields
-from schemas.jornada_schema import Jornada_schema
+from schemas.jornada_schema import Jornada_Schema
 
 class Asistencia_admin_Schema(ma.Schema):
     class Meta:

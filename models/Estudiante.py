@@ -11,8 +11,11 @@ class Estudiante(db.Model):
     egresado = db.Column(db.Boolean, nullable=False, default=False)
 
     # relaciones
-    persona = relationship('Persona', back_populates='estudiantes')
-    asistencias_est = relationship('Asistencia_est', back_populates='estudiante', cascade='all, delete-orphan')
+    # persona = relationship('Persona', back_populates='estudiantes')
+    # asistencias_est = relationship('Asistencia_est', back_populates='estudiante', cascade='all, delete-orphan')
+    
+    # relaciones v2
+    asistencia_est = relationship('Asistencia_est', backref='estudiante', cascade='all, delete-orphan')
     
     # constructor de la clase
     def __init__(self, id_persona, codigo, n_ciclo, egresado):

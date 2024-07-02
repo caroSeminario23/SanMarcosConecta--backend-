@@ -1,5 +1,5 @@
 from utils.ma import ma
-from models.tipo_aula import Tipo_aula
+from models.Tipo_aula import Tipo_aula
 from marshmallow import fields
 
 class Tipo_aula_Schema(ma.Schema):

@@ -7,7 +7,10 @@ pabellon_routes = Blueprint("pabellon_routes", __name__)
 
 @pabellon_routes.route('/create_pabellon', methods=['POST'])
 def create_pabellon():
-    nombre = request.json('nombre')
+    
+    data = request.get_json()
+    
+    nombre = data.get('nombre')
 
     new_pabellon = Pabellon(nombre)
 
@@ -76,8 +79,11 @@ def update_pabellon(id_pabellon):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    
+    data = request.get_json()
 
-    pabellon.nombre = request.json('nombre')
+    pabellon.nombre = data.get('nombre')
 
     db.session.commit()
 

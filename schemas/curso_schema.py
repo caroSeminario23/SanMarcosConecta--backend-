@@ -1,5 +1,5 @@
 from utils.ma import ma
-from models.curso import Curso
+from models.Curso import Curso
 from marshmallow import fields
 
 class Curso_Schema(ma.Schema):

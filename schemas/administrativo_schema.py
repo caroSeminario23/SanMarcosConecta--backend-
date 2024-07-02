@@ -1,8 +1,8 @@
 from utils.ma import ma
-from models.administrativo import Administrativo
+from models.Administrativo import Administrativo
 from marshmallow import fields
 from schemas.persona_schema import Persona_Schema
-from schemas.cargo_Schema import Cargo_Schema
+from schemas.cargo_schema import Cargo_Schema
 
 class Administrativo_Schema(ma.Schema):
     class Meta:

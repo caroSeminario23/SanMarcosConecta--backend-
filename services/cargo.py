@@ -7,7 +7,10 @@ cargo_routes = Blueprint("cargo_routes", __name__)
 
 @cargo_routes.route('/create_cargo', methods=['POST'])
 def create_cargo():
-    nombre = request.json('nombre')
+    
+    data = request.get_json()
+    
+    nombre = data.get('nombre')
 
     new_cargo = Cargo(nombre)
 
@@ -76,8 +79,10 @@ def update_cargo(id_cargo):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    data = request.get_json()
 
-    nombre = request.json('nombre')
+    nombre = data.get('nombre')
 
     cargo.nombre = nombre
 

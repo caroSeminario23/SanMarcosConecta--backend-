@@ -7,9 +7,12 @@ asistencia_est_routes = Blueprint("asistencia_est_routes", __name__)
 
 @asistencia_est_routes.route('/create_asistencia_est', methods=['POST'])
 def create_asistencia_est():
-    id_seccion = request.json('id_seccion')
-    id_estudiante = request.json('id_estudiante')
-    fecha_marcado = request.json('fecha_marcado')
+    
+    data = request.get_json()
+    
+    id_seccion = data.get('id_seccion')
+    id_estudiante = data.get('id_estudiante')
+    fecha_marcado = data.get('fecha_marcado')
 
     new_asistencia_est = Asistencia_est(id_seccion, id_estudiante, fecha_marcado)
     
@@ -78,11 +81,13 @@ def update_asistencia_est(id_asistencia_est):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    data = request.get_json()
 
-    id_seccion = request.json('id_seccion')
-    id_estudiante = request.json('id_estudiante')
-    fecha_marcado = request.json('fecha_marcado')
-    marcada = request.json('marcada')
+    id_seccion = data.get('id_seccion')
+    id_estudiante = data.get('id_estudiante')
+    fecha_marcado = data.get('fecha_marcado')
+    marcada = data.get('marcada')
 
     asistencia_est.id_seccion = id_seccion
     asistencia_est.id_estudiante = id_estudiante

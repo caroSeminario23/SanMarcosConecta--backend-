@@ -11,7 +11,7 @@ class Asistencia_admin(db.Model):
     marcada = db.Column(db.Boolean, nullable=False, default=False)
 
     # relaciones
-    jornada = relationship('Jornada', back_populates='asistencias_admin')
+    # jornada = relationship('Jornada', back_populates='asistencias_admin')
     
     # constructor de la clase
     def __init__(self, id_jornada, fecha_marcado):

@@ -7,7 +7,10 @@ dia_routes = Blueprint("dia_routes", __name__)
 
 @dia_routes.route('/create_dia', methods=['POST'])
 def create_dia():
-    nombre = request.json('nombre')
+    
+    data = request.get_json()
+    
+    nombre = data.get('nombre')
 
     new_dia = Dia(nombre)
 
@@ -76,8 +79,10 @@ def update_dia(id_dia):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    data = request.get_json()
 
-    nombre = request.json('nombre')
+    nombre = data.get('nombre')
 
     dia.nombre = nombre
 

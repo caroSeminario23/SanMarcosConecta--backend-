@@ -1,5 +1,5 @@
 from utils.ma import ma
-from models.aula import Aula
+from models.Aula import Aula
 from marshmallow import fields
 from schemas.pabellon_schema import Pabellon_Schema 
 from schemas.tipo_aula_schema import Tipo_aula_Schema 

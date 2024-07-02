@@ -1,7 +1,7 @@
 from utils.ma import ma
-from models.asistencia_doc import Asistencia_doc
+from models.Asistencia_doc import Asistencia_doc
 from marshmallow import fields
-from schemas.Seccion_Schema import Seccion_Schema
+from schemas.seccion_schema import Seccion_Schema
 
 class Asistencia_doc_Schema(ma.Schema):
     class Meta:

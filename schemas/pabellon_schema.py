@@ -1,5 +1,5 @@
 from utils.ma import ma
-from models.pabellon import Pabellon
+from models.Pabellon import Pabellon
 from marshmallow import fields
 
 class Pabellon_Schema(ma.Schema):

@@ -1,5 +1,5 @@
 from utils.ma import ma
-from models.cargo import Cargo
+from models.Cargo import Cargo
 from marshmallow import fields
 
 class Cargo_Schema(ma.Schema):

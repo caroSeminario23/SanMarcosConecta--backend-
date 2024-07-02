@@ -1,5 +1,5 @@
 from utils.ma import ma
-from models.dia import Dia
+from models.Dia import Dia
 from marshmallow import fields
 
 class Dia_Schema(ma.Schema):

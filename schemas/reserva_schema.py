@@ -1,5 +1,5 @@
 from utils.ma import ma
-from models.reserva import Reserva
+from models.Reserva import Reserva
 from marshmallow import fields
 from schemas.aula_schema import Aula_Schema
 from schemas.persona_schema import Persona_Schema

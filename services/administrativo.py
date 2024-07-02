@@ -7,8 +7,10 @@ administrativo_routes = Blueprint("administrativo_routes", __name__)
 
 @administrativo_routes.route('/create_administrativo', methods=['POST'])
 def create_administrativo():
-    id_persona = request.json('id_persona')
-    id_cargo = request.json('id_cargo')
+    data = request.get_json()
+    
+    id_persona = data.get('id_persona')
+    id_cargo = data.get('id_cargo')
 
     new_administrativo = Administrativo(id_persona, id_cargo)
 
@@ -77,10 +79,12 @@ def update_administrativo(id_administrativo):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    data = request.get_json()
 
-    id_persona = request.json('id_persona')
-    id_cargo = request.json('id_cargo')
-    activo= request.json('activo')
+    id_persona = data.get('id_persona')
+    id_cargo = data.get('id_cargo')
+    activo= data.get('activo')
 
     administrativo.id_persona = id_persona
     administrativo.id_cargo = id_cargo

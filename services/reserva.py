@@ -7,11 +7,14 @@ reserva_routes = Blueprint("reserva_routes", __name__)
 
 @reserva_routes.route('/create_reserva', methods=['POST'])
 def create_reserva():
-    id_aula = request.json('id_aula')
-    id_persona = request.json('id_persona')
-    id_dia = request.json('id_dia')
-    hora_inicio = request.json('hora_inicio')
-    hora_fin = request.json('hora_fin')
+    
+    data = request.get_json()
+    
+    id_aula = data.get('id_aula')
+    id_persona = data.get('id_persona')
+    id_dia = data.get('id_dia')
+    hora_inicio = data.get('hora_inicio')
+    hora_fin = data.get('hora_fin')
 
     new_reserva = Reserva(id_aula, id_persona, id_dia, hora_inicio, hora_fin)
 
@@ -80,12 +83,14 @@ def update_reserva(id_reserva):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    data = request.get_json()
 
-    id_aula = request.json('id_aula')
-    id_persona = request.json('id_persona')
-    id_dia = request.json('id_dia')
-    hora_inicio = request.json('hora_inicio')
-    hora_fin = request.json('hora_fin')
+    id_aula = data.get('id_aula')
+    id_persona = data.get('id_persona')
+    id_dia = data.get('id_dia')
+    hora_inicio = data.get('hora_inicio')
+    hora_fin = data.get('hora_fin')
 
     reserva.id_aula = id_aula
     reserva.id_persona = id_persona

@@ -10,13 +10,17 @@ class Aula(db.Model):
     id_pabellon = db.Column(db.Integer, db.ForeignKey('pabellon.id_pabellon'), nullable=False)
     n_piso = db.Column(db.Integer, nullable=False)
     id_tipo_aula = db.Column(db.Integer, db.ForeignKey('tipo_aula.id_tipo_aula'), nullable=False)
-    coordenadas = db.Column(db.Point, nullable=False)
+    coordenadas = db.Column(db.String(50), nullable=False)
     capacidad = db.Column(db.Integer, nullable=False)
     aforo_actual = db.Column(db.Integer, nullable=False, default=0)
 
     # relaciones
-    pabellon = relationship('Pabellon', backref='aula1')
-    tipo_aula = relationship('Tipo_aula', backref='aula2')
+    # pabellon = relationship('Pabellon', backref='aula1')
+    # tipo_aula = relationship('Tipo_aula', backref='aula2')
+    
+    # relaciones v2
+    seccion = relationship('Seccion', backref='aula', cascade='all, delete-orphan')
+    reserva = relationship('Reserva', backref='aula', cascade='all, delete-orphan')
     
     # constructor de la clase
     def __init__(self, nombre, id_pabellon, n_piso, id_tipo_aula, coordenadas, capacidad):

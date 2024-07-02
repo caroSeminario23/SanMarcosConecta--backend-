@@ -1,5 +1,5 @@
 from utils.ma import ma
-from models.asistencia_est import Asistencia_est
+from models.Asistencia_est import Asistencia_est
 from marshmallow import fields
 from schemas.seccion_schema import Seccion_Schema  
 from schemas.estudiante_schema import Estudiante_Schema  

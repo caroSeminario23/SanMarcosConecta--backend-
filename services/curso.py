@@ -7,7 +7,10 @@ curso_routes = Blueprint("curso_routes", __name__)
 
 @curso_routes.route('/create_curso', methods=['POST'])
 def create_curso():
-    nombre = request.json('nombre')
+    
+    data = request.get_json()
+    
+    nombre = data.get('nombre')
 
     new_curso = Curso(nombre)
 
@@ -76,8 +79,10 @@ def update_curso(id_curso):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    data = request.get_json()
 
-    nombre = request.json('nombre')
+    nombre = data.get('nombre')
 
     curso.nombre = nombre
 

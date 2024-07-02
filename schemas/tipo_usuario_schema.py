@@ -1,5 +1,5 @@
 from utils.ma import ma
-from models.tipo_usuario import Tipo_usuario
+from models.Tipo_usuario import Tipo_usuario
 from marshmallow import fields
 
 class Tipo_usuario_Schema(ma.Schema):

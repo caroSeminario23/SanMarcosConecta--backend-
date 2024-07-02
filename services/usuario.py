@@ -7,9 +7,12 @@ usuario_routes = Blueprint("usuario_routes", __name__)
 
 @usuario_routes.route('/create_usuario', methods=['POST'])
 def create_usuario():
-    email = request.json('email')
-    contrasenia = request.json('contrasenia')
-    id_tipo_usuario = request.json('id_tipo_usuario')
+    
+    data = request.get_json()
+    
+    email = data.get('email')
+    contrasenia = data.get('contrasenia')
+    id_tipo_usuario = data.get('id_tipo_usuario')
 
     new_usuario = Usuario(email, contrasenia, id_tipo_usuario)
 
@@ -78,10 +81,12 @@ def update_usuario(id_usuario):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    data = request.get_json()
 
-    usuario.email = request.json('email')
-    usuario.contrasenia = request.json('contrasenia')
-    usuario.id_tipo_usuario = request.json('id_tipo_usuario')
+    usuario.email = data.get('email')
+    usuario.contrasenia = data.get('contrasenia')
+    usuario.id_tipo_usuario = data.get('id_tipo_usuario')
 
     db.session.commit()
 

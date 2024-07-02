@@ -7,12 +7,15 @@ aula_routes = Blueprint("aula_routes", __name__)
 
 @aula_routes.route('/create_aula', methods=['POST'])
 def create_aula():
-    nombre = request.json('nombre')
-    id_pabellon = request.json('id_pabellon')
-    n_piso = request.json('n_piso')
-    id_tipo_aula = request.json('id_tipo_aula')
-    coordenadas = request.json('coordenadas')
-    capacidad = request.json('capacidad')
+    
+    data = request.get_json()
+    
+    nombre = data.get('nombre')
+    id_pabellon = data.get('id_pabellon')
+    n_piso = data.get('n_piso')
+    id_tipo_aula = data.get('id_tipo_aula')
+    coordenadas = data.get('coordenadas')
+    capacidad = data.get('capacidad')
 
     new_aula = Aula(nombre, id_pabellon, n_piso, id_tipo_aula, coordenadas, capacidad)
 
@@ -81,14 +84,16 @@ def update_aula(id_aula):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    data = request.get_json()
 
-    nombre = request.json('nombre')
-    id_pabellon = request.json('id_pabellon')
-    n_piso = request.json('n_piso')
-    id_tipo_aula = request.json('id_tipo_aula')
-    coordenadas = request.json('coordenadas')
-    capacidad = request.json('capacidad')
-    aforo_actual = request.json('aforo_actual')
+    nombre = data.get('nombre')
+    id_pabellon = data.get('id_pabellon')
+    n_piso = data.get('n_piso')
+    id_tipo_aula = data.get('id_tipo_aula')
+    coordenadas = data.get('coordenadas')
+    capacidad = data.get('capacidad')
+    aforo_actual = data.get('aforo_actual')
 
     aula.nombre = nombre
     aula.id_pabellon = id_pabellon

@@ -12,8 +12,8 @@ class Asistencia_est(db.Model):
     marcada = db.Column(db.Boolean, nullable=False, default=False)
 
     # relaciones
-    seccion = relationship('Seccion', back_populates='asistencias_est')
-    estudiante = relationship('Estudiante', back_populates='asistencias_est')
+    # seccion = relationship('Seccion', back_populates='asistencias_est')
+    # estudiante = relationship('Estudiante', back_populates='asistencias_est')
     
     # constructor de la clase
     def __init__(self, id_seccion, id_estudiante, fecha_marcado):

@@ -15,12 +15,16 @@ class Seccion(db.Model):
     hora_fin = db.Column(db.Time, nullable=False)
 
     # relaciones
-    curso = relationship('Curso', backref='seccion1')
-    aula = relationship('Aula', backref='seccion2')
-    docente = relationship('Docente', back_populates='secciones')
-    dia = relationship('Dia', backref='seccion3')
-    asistencias_doc = relationship('Asistencia_doc', back_populates='seccion')
-    asistencias_est = relationship('Asistencia_est', back_populates='seccion')
+    # curso = relationship('Curso', backref='seccion1')
+    # aula = relationship('Aula', backref='seccion2')
+    # docente = relationship('Docente', back_populates='secciones')
+    # dia = relationship('Dia', backref='seccion3')
+    # asistencias_doc = relationship('Asistencia_doc', back_populates='seccion')
+    # asistencias_est = relationship('Asistencia_est', back_populates='seccion')
+    
+    # relaciones v2
+    asistencia_doc = relationship('Asistencia_doc', backref='seccion', cascade='all, delete-orphan')
+    asistencia_est = relationship('Asistencia_est', backref='seccion', cascade='all, delete-orphan')
     
     # constructor de la clase
     def __init__(self, nombre, id_curso, id_aula, id_docente, id_dia, hora_inicio, hora_fin):

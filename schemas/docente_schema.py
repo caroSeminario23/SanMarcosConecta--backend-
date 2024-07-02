@@ -1,5 +1,5 @@
 from utils.ma import ma
-from models.docente import Docente
+from models.Docente import Docente
 from marshmallow import fields
 from schemas.persona_schema import Persona_Schema
 

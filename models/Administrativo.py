@@ -11,9 +11,12 @@ class Administrativo(db.Model):
     activo = db.Column(db.Boolean, nullable=False, default=True)
 
     # relaciones
-    persona = relationship('Persona', back_populates='administrativos')
-    cargo = relationship('Cargo', backref='administrativo1')
-    jornadas = relationship('Jornada', back_populates='administrativo', cascade='all, delete-orphan')
+    # persona = relationship('Persona', back_populates='administrativos')
+    # cargo = relationship('Cargo', backref='administrativo1')
+    # jornadas = relationship('Jornada', back_populates='administrativo', cascade='all, delete-orphan')
+    
+    #realciones v2
+    jornada = relationship('Jornada', backref='administrativo', cascade='all, delete-orphan')
     
     # constructor de la clase
     def __init__(self, id_persona, id_cargo):

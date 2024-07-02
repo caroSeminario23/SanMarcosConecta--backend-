@@ -7,7 +7,10 @@ docente_routes = Blueprint("docente_routes", __name__)
 
 @docente_routes.route('/create_docente', methods=['POST'])
 def create_docente():
-    id_persona = request.json('id_persona')
+    
+    data = request.get_json()
+    
+    id_persona = data.get('id_persona')
 
     new_docente = Docente(id_persona)
 
@@ -76,9 +79,11 @@ def update_docente(id_docente):
             "status": 404
         }
         return make_response(jsonify(data), 404)
+    
+    data = request.get_json()
 
-    id_persona = request.json('id_persona')
-    activo = request.json('activo')
+    id_persona = data.get('id_persona')
+    activo = data.get('activo')
 
     docente.id_persona = id_persona
     docente.activo = activo

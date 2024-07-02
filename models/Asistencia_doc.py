@@ -11,7 +11,7 @@ class Asistencia_doc(db.Model):
     marcada = db.Column(db.Boolean, nullable=False, default=False)
 
     # relaciones
-    seccion = relationship('Seccion', back_populates='asistencias_doc')
+    # seccion = relationship('Seccion', back_populates='asistencias_doc')
     
     # constructor de la clase
     def __init__(self, id_seccion, fecha_marcado):

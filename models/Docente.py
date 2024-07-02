@@ -10,7 +10,10 @@ class Docente(db.Model):
     activo = db.Column(db.Boolean, nullable=False, default=True)
     
     # relaciones
-    persona = relationship('Persona', back_populates='docentes')
+    # persona = relationship('Persona', back_populates='docentes')
+    
+    # relaciones v2
+    seccion = relationship('Seccion', backref='docente', cascade='all, delete-orphan')
     
     # constructor de la clase
     def __init__(self, id_persona):

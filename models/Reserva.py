@@ -13,9 +13,9 @@ class Reserva(db.Model):
     hora_fin = db.Column(db.Time, nullable=True)
 
     # relaciones
-    aula = relationship('Aula', backref='reserva1')
-    persona = relationship('Persona', back_populates='reservas')
-    dia = relationship('Dia', backref='reserva2')
+    # aula = relationship('Aula', backref='reserva1')
+    # persona = relationship('Persona', back_populates='reservas')
+    # dia = relationship('Dia', backref='reserva2')
     
     # constructor de la clase
     def __init__(self, id_aula, id_persona, id_dia, hora_inicio, hora_fin):
