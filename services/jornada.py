@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.jornada import Jornada
+from models.Jornada import Jornada
 from schemas.jornada_schema import jornada_schema, jornadas_schema
 
 jornada_routes = Blueprint("jornada_routes", __name__)

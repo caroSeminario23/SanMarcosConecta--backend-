@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.estudiante import Estudiante
+from models.Estudiante import Estudiante
 from schemas.estudiante_schema import estudiante_schema, estudiantes_schema
 
 estudiante_routes = Blueprint("estudiante_routes", __name__)

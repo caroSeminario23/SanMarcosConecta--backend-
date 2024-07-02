@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.persona import Persona
+from models.Persona import Persona
 from schemas.persona_schema import persona_schema, personas_schema
 
 persona_routes = Blueprint("persona_routes", __name__)

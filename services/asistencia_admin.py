@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.asistencia_admin import Asistencia_admin
+from models.Asistencia_admin import Asistencia_admin
 from schemas.asistencia_admin_schema import asistencia_admin_schema, asistencias_admin_schema
 
 asistencia_admin_routes = Blueprint("asistencia_admin_routes", __name__)

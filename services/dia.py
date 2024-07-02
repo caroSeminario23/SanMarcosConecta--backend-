@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.dia import Dia
+from models.Dia import Dia
 from schemas.dia_schema import dia_schema, dias_schema
 
 dia_routes = Blueprint("dia_routes", __name__)

@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.cargo import Cargo
+from models.Cargo import Cargo
 from schemas.cargo_schema import cargo_schema, cargos_schema
 
 cargo_routes = Blueprint("cargo_routes", __name__)

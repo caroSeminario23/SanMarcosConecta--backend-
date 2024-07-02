@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.tipo_aula import TipoAula
+from models.Tipo_aula import TipoAula
 from schemas.tipo_aula_schema import tipo_aula_schema, tipos_aula_schema
 
 tipo_aula_routes = Blueprint("tipo_aula_routes", __name__)

@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.pabellon import Pabellon
+from models.Pabellon import Pabellon
 from schemas.pabellon_schema import pabellon_schema, pabellones_schema
 
 pabellon_routes = Blueprint("pabellon_routes", __name__)

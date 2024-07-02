@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.tipo_usuario import TipoUsuario
+from models.Tipo_usuario import TipoUsuario
 from schemas.tipo_usuario_schema import tipo_usuario_schema, tipos_usuario_schema
 
 tipo_usuario_routes = Blueprint("tipo_usuario_routes", __name__)

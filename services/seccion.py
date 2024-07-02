@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.seccion import Seccion
+from models.Seccion import Seccion
 from schemas.seccion_schema import seccion_schema, secciones_schema
 
 seccion_routes = Blueprint("seccion_routes", __name__)

@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.aula import Aula
+from models.Aula import Aula
 from schemas.aula_schema import aula_schema, aulas_schema
 
 aula_routes = Blueprint("aula_routes", __name__)

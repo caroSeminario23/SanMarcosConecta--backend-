@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
-from models.reserva import Reserva
+from models.Reserva import Reserva
 from schemas.reserva_schema import reserva_schema, reservas_schema
 
 reserva_routes = Blueprint("reserva_routes", __name__)
