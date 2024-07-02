@@ -1,0 +1,27 @@
+# ENLACES DE CURSO(COMPLETO)
+POST http://127.0.0.1:5000/curso_routes/create_curso
+Content-Type: application/json
+
+{
+    "id_curso": 1, 
+    "nombre" : "Interaccion Hombre Computador"
+}
+#####
+
+GET http://127.0.0.1:5000/curso_routes/get_curso
+#####
+
+GET http://127.0.0.1:5000/curso_routes/get_curso/1
+#####
+
+PUT http://127.0.0.1:5000/curso_routes/update_curso/3
+Content-Type: application/json
+
+{
+    "id_curso": 3, 
+    "nombre" : "Inteligencia Artificial"
+}
+#####
+
+DELETE http://127.0.0.1:5000/curso_routes/delete_curso/3
+#####

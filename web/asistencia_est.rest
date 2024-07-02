@@ -1,0 +1,33 @@
+# ENLACES DE ASISTENCIA ESTUDIANTE(COMPLETO)
+POST http://127.0.0.1:5000/asistencia_est_routes/create_asistencia_est
+Content-Type: application/json
+
+{    
+    "id_asistencia_est" : 1,
+    "id_seccion": 1, 
+    "id_estudiante": 1,
+    "fecha_marcado": "03-07-2024",
+    "marcado" : "false" ,
+}
+#####
+
+GET http://127.0.0.1:5000/asistencia_est_routes/get_asistencia_est
+#####
+
+GET http://127.0.0.1:5000/asistencia_est_routes/get_asistencia_est/1
+#####
+
+PUT http://127.0.0.1:5000/asistencia_est_routes/update_asistencia_est/3
+Content-Type: application/json
+
+{
+    "id_asistencia_est" : 3,
+    "id_seccion": 3, 
+    "id_estudiante": 3,
+    "fecha_marcado": "08-07-2024",
+    "marcado" : "true" ,
+}
+#####
+
+DELETE http://127.0.0.1:5000/asistencia_est_routes/delete_asistencia_est/3
+#####

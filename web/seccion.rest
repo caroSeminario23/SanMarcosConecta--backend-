@@ -1,0 +1,37 @@
+# ENLACES DE SECCION (COMPLETO)
+
+POST http://127.0.0.1:5000/seccion_routes/create_seccion
+Content-Type: application/json
+
+{
+    "id_curso" : 1,
+    "id_aula" : 1,
+    "id_docente" : 1 ,
+    "id_dia" : 4 ,
+    "hora_inicio" : "08:00:00",
+    "hora_fin" : "12:00:00" ,
+}
+#####
+
+GET http://127.0.0.1:5000/seccion_routes/get_seccion
+#####
+
+GET http://127.0.0.1:5000/seccion_routes/get_seccion/1
+#####
+
+PUT http://127.0.0.1:5000/seccion_routes/update_seccion/2
+Content-Type: application/json
+
+{
+    "id_curso" : 2,
+    "id_aula" : 2,
+    "id_docente" : 2 ,
+    "id_dia" : 5 ,
+    "hora_inicio" : "02:00:00",
+    "hora_fin" : "06:00:00" ,
+}
+
+#####
+
+DELETE http://127.0.0.1:5000/seccion_routes/delete_seccion/2
+#####

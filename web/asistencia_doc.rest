@@ -1,0 +1,31 @@
+# ENLACES DE ASISTENCIA DOCENTE(COMPLETO)
+POST http://127.0.0.1:5000/asistencia_doc_routes/create_asistencia_doc
+Content-Type: application/json
+
+{    
+    "id_asistencia_doc" : 1,
+    "id_seccion": 1, 
+    "fecha_marcado": "03-07-2024",
+    "marcado" : "false" 
+}
+#####
+
+GET http://127.0.0.1:5000/asistencia_doc_routes/get_asistencia_doc
+#####
+
+GET http://127.0.0.1:5000/asistencia_doc_routes/get_asistencia_doc/1
+#####
+
+PUT http://127.0.0.1:5000/asistencia_doc_routes/update_asistencia_doc/3
+Content-Type: application/json
+
+{
+    "id_asistencia_doc" : 3,
+    "id_seccion": 3, 
+    "fecha_marcado": "08-07-2024",
+    "marcado" : "true" 
+}
+#####
+
+DELETE http://127.0.0.1:5000/asistencia_doc_routes/delete_asistencia_doc/3
+#####

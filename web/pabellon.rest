@@ -1,0 +1,25 @@
+# ENLACES DE PABELLON (COMPLETO)
+POST http://127.0.0.1:5000/pabellon_routes/create_pabellon
+Content-Type: application/json
+
+{
+    "nombre" : "nuevo", 
+}
+#####
+
+GET http://127.0.0.1:5000/pabellon_routes/get_pabellon
+#####
+
+GET http://127.0.0.1:5000/pabellon_routes/get_pabellon/1
+#####
+
+PUT http://127.0.0.1:5000/pabellon_routes/update_pabellon/2
+Content-Type: application/json
+
+{
+    "nombre" : "viejo",
+}
+#####
+
+DELETE http://127.0.0.1:5000/pabellon_routes/delete_pabellon/2
+#####

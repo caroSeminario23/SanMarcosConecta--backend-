@@ -1,0 +1,35 @@
+# ENLACES DE RESERVA (COMPLETO)
+
+POST http://127.0.0.1:5000/reserva_routes/create_reserva
+Content-Type: application/json
+
+{
+    "id_aula" : 1,
+    "id_persona" : 1 ,
+    "id_dia" : 3 ,
+    "hora_inicio" : "06:00:00",
+    "hora_fin" : "10:00:00" ,
+}
+#####
+
+GET http://127.0.0.1:5000/reserva_routes/get_reserva
+#####
+
+GET http://127.0.0.1:5000/reserva_routes/get_reserva/1
+#####
+
+PUT http://127.0.0.1:5000/reserva_routes/update_reserva/2
+Content-Type: application/json
+
+{
+    "id_aula" : 2,
+    "id_persona" : 2 ,
+    "id_dia" : 4 ,
+    "hora_inicio" : "08:00:00",
+    "hora_fin" : "12:00:00" ,
+}
+
+#####
+
+DELETE http://127.0.0.1:5000/reserva_routes/delete_reserva/2
+#####

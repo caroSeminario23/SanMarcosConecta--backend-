@@ -1,0 +1,39 @@
+# ENLACES DE PERSONA (COMPLETO)
+POST http://127.0.0.1:5000/persona_routes/create_persona
+Content-Type: application/json
+
+{
+    "id_usuario" : 1,
+    "cod_identificacion" :"21200000" ,
+    "doc_identificacion" : "987654321" ,
+    "nombres" : "Lionel Andres",
+    "apellidos" : "Messi Cuccitini" ,
+    "fec_nacimiento" : "24-06-1987",
+    "n_celular" :"999999999" ,
+    "genero" : "M" ,
+}
+#####
+
+GET http://127.0.0.1:5000/persona_routes/get_persona
+#####
+
+GET http://127.0.0.1:5000/persona_routes/get_persona/1
+#####
+
+PUT http://127.0.0.1:5000/persona_routes/update_persona/2
+Content-Type: application/json
+
+{
+    "id_usuario" : 2,
+    "cod_identificacion" :"20200000" ,
+    "doc_identificacion" : "987654322" ,
+    "nombres" : "Persona",
+    "apellidos" : "Personita" ,
+    "fec_nacimiento" : "01-07-2000",
+    "n_celular" :"933333333" ,
+    "genero" : "F" ,
+}
+#####
+
+DELETE http://127.0.0.1:5000/persona_routes/delete_persona/2
+#####
