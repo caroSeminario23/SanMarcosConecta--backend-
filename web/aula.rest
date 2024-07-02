@@ -1,0 +1,39 @@
+# ENLACES DE AULA(COMPLETO)
+POST http://127.0.0.1:5000/aula_routes/create_aula
+Content-Type: application/json
+
+{
+    "id_aula": 1, 
+    "nombre" : "aula109",
+    "id_pabellon": 1,
+    "n_piso": 2,
+    "id_tipo_aula": 1,
+    "coordenadas": "",
+    "capacidad":  40,
+    "aforo_actual" : 30 ,
+}
+#####
+
+GET http://127.0.0.1:5000/aula_routes/get_aula
+#####
+
+GET http://127.0.0.1:5000/aula_routes/get_aula/1
+#####
+
+PUT http://127.0.0.1:5000/aula_routes/update_aula/3
+Content-Type: application/json
+
+{
+    "id_aula": 2, 
+    "nombre" : "aulaMagna",
+    "id_pabellon": 1,
+    "n_piso": 2,
+    "id_tipo_aula": 1,
+    "coordenadas": "",
+    "capacidad":  50,
+    "aforo_actual" : 40 ,
+}
+#####
+
+DELETE http://127.0.0.1:5000/aula_routes/delete_aula/3
+#####

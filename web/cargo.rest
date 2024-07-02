@@ -1,0 +1,27 @@
+# ENLACES DE CARGO(COMPLETO)
+POST http://127.0.0.1:5000/cargo_routes/create_cargo
+Content-Type: application/json
+
+{
+    "id_cargo": 1, 
+    "nombre" : "Administrador"
+}
+#####
+
+GET http://127.0.0.1:5000/cargo_routes/get_cargo
+#####
+
+GET http://127.0.0.1:5000/cargo_routes/get_cargo/1
+#####
+
+PUT http://127.0.0.1:5000/cargo_routes/update_cargo/3
+Content-Type: application/json
+
+{
+    "id_cargo": 3, 
+    "nombre" : "Usuario"
+}
+#####
+
+DELETE http://127.0.0.1:5000/cargo_routes/delete_cargo/3
+#####

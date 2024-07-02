@@ -1,0 +1,29 @@
+# ENLACES DE DOCENTE(COMPLETO)
+POST http://127.0.0.1:5000/docente_routes/create_docente
+Content-Type: application/json
+
+{
+    "id_docente":1, 
+    "id_persona": 1,
+    "activo": "false"
+}
+#####
+
+GET http://127.0.0.1:5000/docente_routes/get_docente
+#####
+
+GET http://127.0.0.1:5000/docente_routes/get_docente/1
+#####
+
+PUT http://127.0.0.1:5000/docente_routes/update_docente/3
+Content-Type: application/json
+
+{
+    "id_docente": 3,
+    "id_cargo": 4,
+    "activo": "false"
+}
+#####
+
+DELETE http://127.0.0.1:5000/docente_routes/delete_docente/3
+#####

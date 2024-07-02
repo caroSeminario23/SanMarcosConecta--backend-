@@ -1,0 +1,29 @@
+# ENLACES DE ESTUDIANTE (COMPLETO)
+POST http://127.0.0.1:5000/estudiante_routes/create_estudiante
+Content-Type: application/json
+
+{
+    "id_persona" : 1,
+    "n_ciclo" : 7, 
+    "egresado" : "false",
+}
+#####
+
+GET http://127.0.0.1:5000/estudiante_routes/get_estudiante
+#####
+
+GET http://127.0.0.1:5000/estudiante_routes/get_estudiante/1
+#####
+
+PUT http://127.0.0.1:5000/estudiante_routes/update_estudiante/4
+Content-Type: application/json
+
+{
+    "id_persona" : 3,
+    "n_ciclo" : 10, 
+    "egresado" : "false",
+}
+#####
+
+DELETE http://127.0.0.1:5000/estudiante_routes/delete_estudiante/4
+#####

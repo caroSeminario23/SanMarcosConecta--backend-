@@ -1,0 +1,27 @@
+# ENLACES DE DIA(COMPLETO)
+POST http://127.0.0.1:5000/dia_routes/create_dia
+Content-Type: application/json
+
+{
+    "id_dia": 1, 
+    "nombre" : "Lunes"
+}
+#####
+
+GET http://127.0.0.1:5000/dia_routes/get_dia
+#####
+
+GET http://127.0.0.1:5000/dia_routes/get_dia/1
+#####
+
+PUT http://127.0.0.1:5000/dia_routes/update_dia/3
+Content-Type: application/json
+
+{
+    "id_dia": 3, 
+    "nombre" : "Miercoles"
+}
+#####
+
+DELETE http://127.0.0.1:5000/dia_routes/delete_dia/3
+#####

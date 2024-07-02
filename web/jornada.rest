@@ -1,0 +1,31 @@
+# ENLACES DE JORNADA (COMPLETO)
+POST http://127.0.0.1:5000/jornada_routes/create_jornada
+Content-Type: application/json
+
+{
+    "id_administrativo" : 1,
+    "id_dia" : 3, 
+    "hora_inicio" : "02:00:00",
+    "hora_fin" : "06:00:00",
+}
+#####
+
+GET http://127.0.0.1:5000/jornada_routes/get_jornada
+#####
+
+GET http://127.0.0.1:5000/jornada_routes/get_jornada/1
+#####
+
+PUT http://127.0.0.1:5000/jornada_routes/update_jornada/4
+Content-Type: application/json
+
+{
+    "id_administrativo" : 3,
+    "id_dia" : 5, 
+    "hora_inicio" : "06:00:00",
+    "hora_fin" : "10:00:00",
+}
+#####
+
+DELETE http://127.0.0.1:5000/jornada_routes/delete_jornada/4
+#####

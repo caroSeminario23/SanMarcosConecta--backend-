@@ -1,0 +1,31 @@
+# ENLACES DE ASISTENCIA ADMINISTRADOR(COMPLETO)
+POST http://127.0.0.1:5000/asistencia_admin_routes/create_asistencia_admin
+Content-Type: application/json
+
+{    
+    "id_asistencia_admin" : 1,
+    "id_jornada": 1, 
+    "fecha_marcado": "03-07-2024",
+    "marcado" : "false" 
+}
+#####
+
+GET http://127.0.0.1:5000/asistencia_admin_routes/get_asistencia_admin
+#####
+
+GET http://127.0.0.1:5000/asistencia_admin_routes/get_asistencia_admin/1
+#####
+
+PUT http://127.0.0.1:5000/asistencia_admin_routes/update_asistencia_admin/3
+Content-Type: application/json
+
+{
+    "id_asistencia_admin" : 3,
+    "id_jornada": 3, 
+    "fecha_marcado": "08-07-2024",
+    "marcado" : "true" 
+}
+#####
+
+DELETE http://127.0.0.1:5000/asistencia_admin_routes/delete_asistencia_admin/3
+#####

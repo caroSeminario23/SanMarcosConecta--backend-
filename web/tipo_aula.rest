@@ -1,0 +1,27 @@
+# ENLACES DE TIPO AULA(COMPLETO)
+
+POST http://127.0.0.1:5000/tipo_aula_routes/create_tipo_aula
+Content-Type: application/json
+
+{
+    "nombre": "Salon",
+}
+#####
+
+GET http://127.0.0.1:5000/tipo_aula_routes/get_tipo_aula
+#####
+
+GET http://127.0.0.1:5000/tipo_aula_routes/get_tipo_aula/1
+#####
+
+PUT http://127.0.0.1:5000/tipo_aula_routes/update_tipo_aula/2
+Content-Type: application/json
+
+{
+    "nombre" : "Laboratorio",
+}
+
+#####
+
+DELETE http://127.0.0.1:5000/tipo_aula_routes/delete_tipo_aula/2
+#####
